@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <link rel="shortcut icon" href="https://belajar.e-smanpul.com/img/icon.png" type="image/png">
+
+  <title>     ABELMAS | Pilih Kelas
+ </title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://belajar.e-smanpul.com/template/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="https://belajar.e-smanpul.com/template/dist/css/adminlte.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- venobox -->
+  <link rel="stylesheet" href="https://belajar.e-smanpul.com/template/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet"
+      href="https://belajar.e-smanpul.com/template/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <link rel="stylesheet" href="https://belajar.e-smanpul.com/template/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="https://belajar.e-smanpul.com/plugin/venobox/venobox.css">
+  <link rel="stylesheet" href="https://belajar.e-smanpul.com/plugin/venobox/venobox.min.css">
+  <link rel="stylesheet" href="https://belajar.e-smanpul.com/assets/timepicker/jquery.timepicker.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+      body {
+          font-family: monospace;
+      }
+
+
+      .font-8 {
+          font-size: 8px !important;
+      }
+
+      .font-9 {
+          font-size: 9px !important;
+      }
+
+      .font-12 {
+          font-size: 12px !important;
+      }
+
+      .font-13 {
+          font-size: 13px !important;
+      }
+
+      .font-14 {
+          font-size: 14px !important;
+      }
+
+      .font-16 {
+          font-size: 12px !important;
+      }
+
+      .font-18 {
+          font-size: 18px !important;
+      }
+
+      .fw-bold {
+          font-weight: bold;
+      }
+
+      .fw-800 {
+          font-weight: 800;
+      }
+
+      .fw-700 {
+          font-weight: 700;
+      }
+
+      .fw-600 {
+          font-weight: 600;
+      }
+
+      .content {
+          min-height: 100vh;
+      }
+
+      .nav-item {
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          font-weight: bold;
+          color: black;
+      }
+
+      .navbar-nav .nav-active {
+          border-bottom: 2px solid #007bff;
+          border-radius: 10px;
+      }
+
+      .title-forum-class {
+          font-size: 14px;
+          font-weight: bold;
+      }
+
+      .title-forum-priode {
+          font-size: 14px;
+      }
+
+      .title-forum-guru {
+          font-size: 14px;
+      }
+
+      .title-class {
+          font-size: 15px;
+          font-weight: bold;
+          line-height: 19px;
+      }
+
+      .title-priode {
+          font-size: 13px;
+      }
+
+      .title-guru {
+          font-size: 14px;
+          font-weight: bold;
+      }
+
+      .img-position {
+          right: 16px;
+          bottom: 111px;
+      }
+
+      .img-class-card {
+          margin: 0 auto;
+          padding: 3px;
+          width: 60px;
+          height: 60px;
+
+      }
+
+      .img-header-kelas-1 {
+          background-image: url('https://lh3.googleusercontent.com/DXpJleMtN5bEuyNCMGzpOByCT6GeoREK4hWdGm3RTb7SPSqKaXKT4_fI6-QjIB7h6u4GnJasxjeE=w393-h135-p');
+          background-repeat: no-repeat;
+          color: white
+      }
+
+      .img-header-kelas-2 {
+          background-image: url('https://lh3.googleusercontent.com/w-ikCo0P2hTtVJCfEhkyNZKkCZQc5uirT2xb8JJafe916-fNuuGJsoN-TYj1SzW_9nPmSFI-8vo4=w393-h135-p');
+          background-repeat: no-repeat;
+          color: white
+      }
+
+      .img-header-kelas-3 {
+          background-image: url('https://lh3.googleusercontent.com/IsoNa2rfYjziOtdARnjmBR08J2gb4nhbV6f_sIlz9PY5Ub6bfnRv5RCOYzgJsBUOkBWTKU73mcBA=w393-h135-p');
+          background-repeat: no-repeat;
+          color: white
+      }
+
+      .img-header-kelas-4 {
+          background-image: url('https://lh3.googleusercontent.com/g0phbLkhmEmcwPdNhAuID3QjZEMZfSWNtqGuANTSU2pM6u7awGQA70-npa6cg-IevW5o26iPUlk1=w386-h133-p');
+          background-repeat: no-repeat;
+          color: white
+      }
+
+      .img-card-forum-kelas-1 {
+          background-image: url('https://gstatic.com/classroom/themes/img_learnlanguage.jpg');
+          background-size: auto;
+          background-repeat: no-repeat;
+          color: white
+      }
+
+      .img-card-forum-kelas-2 {
+          background-image: url('https://gstatic.com/classroom/themes/img_bookclub.jpg');
+          background-size: auto;
+          background-repeat: no-repeat;
+          color: white
+      }
+
+      .img-card-forum-kelas-3 {
+          background-image: url('https://gstatic.com/classroom/themes/img_breakfast.jpg');
+          background-size: auto;
+          background-repeat: no-repeat;
+          color: white
+      }
+
+      .img-card-forum-kelas-4 {
+          background-image: url('https://gstatic.com/classroom/themes/img_read.jpg');
+          background-size: auto;
+          background-repeat: no-repeat;
+          color: white
+      }
+
+      .title-kd {
+          font-size: 35px;
+          font-weight: bold;
+          line-height: 35px;
+      }
+
+      .title-dkd {
+          font-size: 18px;
+          line-height: 18px;
+          text-align: justify;
+
+      }
+
+      .agt-fonts-header {
+          font-size: 24px;
+          font-weight: bold;
+          color: #007bff;
+      }
+
+      .tbkd {
+          font-size: 17px;
+      }
+
+      .judul-kegiatan-belajar {
+          font-size: 13px;
+          font-weight: bold;
+      }
+
+      @media (min-width: 768px) {
+
+          .font-16 {
+              font-size: 16px !important;
+          }
+
+          .img-header-kelas-1 {
+              background-image: url('https://lh3.googleusercontent.com/DXpJleMtN5bEuyNCMGzpOByCT6GeoREK4hWdGm3RTb7SPSqKaXKT4_fI6-QjIB7h6u4GnJasxjeE=w393-h135-p');
+              background-size: 300px 80px;
+              background-repeat: no-repeat;
+              color: white
+          }
+
+          .img-header-kelas-2 {
+              background-image: url('https://lh3.googleusercontent.com/w-ikCo0P2hTtVJCfEhkyNZKkCZQc5uirT2xb8JJafe916-fNuuGJsoN-TYj1SzW_9nPmSFI-8vo4=w393-h135-p');
+              background-size: 300px 80px;
+              background-repeat: no-repeat;
+              color: white
+          }
+
+          .img-header-kelas-3 {
+              background-image: url('https://lh3.googleusercontent.com/IsoNa2rfYjziOtdARnjmBR08J2gb4nhbV6f_sIlz9PY5Ub6bfnRv5RCOYzgJsBUOkBWTKU73mcBA=w393-h135-p');
+              background-size: 300px 80px;
+              background-repeat: no-repeat;
+              color: white
+          }
+
+          .img-header-kelas-4 {
+              background-image: url('https://lh3.googleusercontent.com/g0phbLkhmEmcwPdNhAuID3QjZEMZfSWNtqGuANTSU2pM6u7awGQA70-npa6cg-IevW5o26iPUlk1=w386-h133-p');
+              background-size: 300px 80px;
+              background-repeat: no-repeat;
+              color: white
+          }
+
+          .img-card-forum-kelas-1 {
+              background-image: url('https://gstatic.com/classroom/themes/img_learnlanguage.jpg');
+              background-size: 100%;
+              background-repeat: no-repeat;
+              color: white
+          }
+
+          .img-card-forum-kelas-2 {
+              background-image: url('https://gstatic.com/classroom/themes/img_bookclub.jpg');
+              background-size: 100%;
+              background-repeat: no-repeat;
+              color: white
+          }
+
+          .img-card-forum-kelas-3 {
+              background-image: url('https://gstatic.com/classroom/themes/img_breakfast.jpg');
+              background-size: 100%;
+              background-repeat: no-repeat;
+              color: white
+          }
+
+          .img-card-forum-kelas-4 {
+              background-image: url('https://gstatic.com/classroom/themes/img_read.jpg');
+              background-size: 100%;
+              background-repeat: no-repeat;
+              color: white
+          }
+
+          .agt-fonts-header {
+              font-size: 30px;
+              font-weight: bold;
+              color: #007bff;
+          }
+
+          .tbkd {
+              font-size: 11px;
+          }
+
+          .judul-kegiatan-belajar {
+              font-size: 15px;
+              font-weight: bold;
+          }
+
+          .title-forum-class {
+              font-size: 22px;
+              font-weight: bold;
+              line-height: 22px;
+          }
+
+          .title-forum-priode {
+              font-size: 18px;
+          }
+
+          .title-forum-guru {
+              font-size: 18px;
+          }
+      }
+
+      .username {
+          line-height: 16px;
+      }
+
+      .description {
+          line-height: 16px;
+      }
+
+      .nav-fonts {
+          font-size: 8px;
+          font-weight: bold;
+      }
+
+      .navbar-expand .navbar-nav .nav-link {
+          padding-right: 0rem !important;
+          padding-left: 0rem !important;
+      }
+
+      .profile-user-img {
+          width: 115px;
+          height: 110px;
+      }
+  </style>
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-collapse layout-top-nav">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <div class="container">
+      <a href="https://belajar.e-smanpul.com/siswa/pilih-kelas" class="navbar-brand" style="margin: 4px -4px -4px 0px;">
+        <img src="https://belajar.e-smanpul.com/img/logo.png" alt="SMANPUL Logo" class="brand-image" style="
+            height: 46px !important;
+        ">
+      </a>
+      <div data-v-255ac0b7="" id="nav-collapse" class="navbar-collapse collapse" style="display: none; font-family:Avenir,Helvetica,Arial,sans-serif; font-size :14px !important">
+        
+              </div>
+      <!-- Right navbar links -->
+      <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link btn btn-success btn-sm text-white fw-bolder" href="https://dapo.e-smanpul.com/siswa/prestasi/MTgzNw==" target="_BLANK">
+            <i class="fas fa-book mr-2"></i> PRESTASI
+            <span class="badge badge-danger navbar-badge"></span>
+          </a>
+        </li>
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fas fa-bell"></i>
+            <span class="badge badge-danger navbar-badge">5</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="min-width: 355px !important;">
+            <p style="text-align:left; padding:8px" class="">
+                Notifikasi
+                <span style="float:right;">
+                    <button class="btn btn-primary btn-sm" style="font-size: 10px;"> <i class="fa fa-check-circle"></i> Tandai sudah dibaca </button>
+                </span>
+            </p>
+            <div class="dropdown-divider"></div>
+            <div class="" style="overflow-y: auto; height:425px;">
+                            <a href="https://belajar.e-smanpul.com/siswa/a44d1350/absen" class="dropdown-item">
+                <!-- Message Start -->
+                <div class="media">
+                  <img src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-1008-b26d7dcc-f617-4f95-9078-fc092b868bca.jfif" onerror="this.src='http://via.placeholder.com/128';" width="50px" height="50px" class="mr-3 img-circle">
+                  <div class="media-body">
+                    <h5 class="dropdown-item-title mb-2">
+                                            <b style="font-size:14px;"> Ika Novita Sari, S.Pd </b> <span class="badge badge-success" style="font-size: 10px !important"> XI  F</span>
+                    </h5>
+                    <p class="text-sm small mb-2"> Absensi mata pelajaran ekonomi sudah dibuat, waktu absensi dimulai pukul : 08:10 sampai 09:20 </p>
+                    <p class="text-muted text-right" style="font-size:8px !important;"><i class="far fa-clock mr-1"></i> Senin, 07 Oktober 2024</p>
+                  </div>
+                </div>
+                <!-- Message End -->
+              </a>
+              <div class="dropdown-divider"></div>
+                            <a href="https://belajar.e-smanpul.com/siswa/a44d1350/tugas" class="dropdown-item">
+                <!-- Message Start -->
+                <div class="media">
+                  <img src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-1008-b26d7dcc-f617-4f95-9078-fc092b868bca.jfif" onerror="this.src='http://via.placeholder.com/128';" width="50px" height="50px" class="mr-3 img-circle">
+                  <div class="media-body">
+                    <h5 class="dropdown-item-title mb-2">
+                                            <b style="font-size:14px;"> Ika Novita Sari, S.Pd </b> <span class="badge badge-success" style="font-size: 10px !important"> XI  F</span>
+                    </h5>
+                    <p class="text-sm small mb-2"> Pertemuan ke-22 mata pelajaran ekonomi baru saja diperbaharui </p>
+                    <p class="text-muted text-right" style="font-size:8px !important;"><i class="far fa-clock mr-1"></i> Senin, 07 Oktober 2024</p>
+                  </div>
+                </div>
+                <!-- Message End -->
+              </a>
+              <div class="dropdown-divider"></div>
+                            <a href="https://belajar.e-smanpul.com/siswa/ba2e0c02/tugas" class="dropdown-item">
+                <!-- Message Start -->
+                <div class="media">
+                  <img src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-2111-500028400570_60851.jpg" onerror="this.src='http://via.placeholder.com/128';" width="50px" height="50px" class="mr-3 img-circle">
+                  <div class="media-body">
+                    <h5 class="dropdown-item-title mb-2">
+                                            <b style="font-size:14px;"> Dian Pratiwi, S.Pd </b> <span class="badge badge-success" style="font-size: 10px !important"> XI  F</span>
+                    </h5>
+                    <p class="text-sm small mb-2"> Pertemuan ke-21 mata pelajaran sosiologi baru saja diperbaharui </p>
+                    <p class="text-muted text-right" style="font-size:8px !important;"><i class="far fa-clock mr-1"></i> Senin, 07 Oktober 2024</p>
+                  </div>
+                </div>
+                <!-- Message End -->
+              </a>
+              <div class="dropdown-divider"></div>
+                            <a href="https://belajar.e-smanpul.com/siswa/2aa0a0c8/tugas" class="dropdown-item">
+                <!-- Message Start -->
+                <div class="media">
+                  <img src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-0755-foto-3-4-hazmi.jpg" onerror="this.src='http://via.placeholder.com/128';" width="50px" height="50px" class="mr-3 img-circle">
+                  <div class="media-body">
+                    <h5 class="dropdown-item-title mb-2">
+                                            <b style="font-size:14px;"> Hazmi, S.Pd, M.Si </b> <span class="badge badge-success" style="font-size: 10px !important"> XI  F</span>
+                    </h5>
+                    <p class="text-sm small mb-2"> Pertemuan ke-22 mata pelajaran bahasa jerman baru saja ditambahkan </p>
+                    <p class="text-muted text-right" style="font-size:8px !important;"><i class="far fa-clock mr-1"></i> Senin, 07 Oktober 2024</p>
+                  </div>
+                </div>
+                <!-- Message End -->
+              </a>
+              <div class="dropdown-divider"></div>
+                            <a href="https://belajar.e-smanpul.com/siswa/2aa0a0c8/absen" class="dropdown-item">
+                <!-- Message Start -->
+                <div class="media">
+                  <img src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-0755-foto-3-4-hazmi.jpg" onerror="this.src='http://via.placeholder.com/128';" width="50px" height="50px" class="mr-3 img-circle">
+                  <div class="media-body">
+                    <h5 class="dropdown-item-title mb-2">
+                                            <b style="font-size:14px;"> Hazmi, S.Pd, M.Si </b> <span class="badge badge-success" style="font-size: 10px !important"> XI  F</span>
+                    </h5>
+                    <p class="text-sm small mb-2"> Absensi mata pelajaran bahasa jerman sudah dibuat, waktu absensi dimulai pukul : 10:45 sampai 11:55 </p>
+                    <p class="text-muted text-right" style="font-size:8px !important;"><i class="far fa-clock mr-1"></i> Senin, 07 Oktober 2024</p>
+                  </div>
+                </div>
+                <!-- Message End -->
+              </a>
+              <div class="dropdown-divider"></div>
+                          </div>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fa fa-cogs"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+            <span class="dropdown-header">Pengaturan</span>
+            <div class="dropdown-divider"></div>
+            <a href="https://belajar.e-smanpul.com/siswa/log" class="dropdown-item">
+              <i class="fa fa-list-ol mr-2"></i> Log Aktivitas
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="https://belajar.e-smanpul.com/logout/web" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item">
+              <i class="fa fa-power-off mr-2"></i> Logout
+              <form id="logout-form" action="https://belajar.e-smanpul.com/logout/web" method="POST" style="display: one;">
+                <input type="hidden" name="_token" value="BskSr7gPws2Wk6nVYMZUT7RwS2Vu2TzbhL1A2cMB">
+              </form>
+            </a>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="https://belajar.e-smanpul.com/template/index3.html" class="brand-link">
+      <img src="https://belajar.e-smanpul.com/template/dist/img/AdminLTELogo.png"
+           alt="AdminLTE Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="https://belajar.e-smanpul.com/template/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Alexander Pierce</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="https://belajar.e-smanpul.com/template/index.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v1</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://belajar.e-smanpul.com/template/index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v2</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://belajar.e-smanpul.com/template/index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v3</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+        <!-- Main content -->
+    <div class="content pt-3">
+        <div class="container mb-5">
+
+            <div class="row">
+                <div class="col-md-12">
+                  <marquee direction="left" class="fw-bold mb-0"> <i> TERIMAKASIH TELAH MENGGUNAKAN ABELMAS SMA 10 NEGERI PONTIANAK (TAHUN AJARAN  2024-2025 GANJIL) </i> </marquee>
+                </div>
+                <div class="col-md-3">
+
+                  <!-- About Me Box -->
+                  <div class="card card-primary mb-2">
+                    <div class="card-header">
+                      <h3 class="card-title title-class">INFROMASI</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body pt-2 ">
+                      <div class="row">
+                        <div class="col-md-6 col-6 mb-2">
+                          <button type="button" class="btn btn-dark btn-sm mr-1 btn-edit btn-block" data-nama="RAISYA PERMATA INTANIA WULANDARI" data-foto="MURID-0812-c272fcfaf19fa19dc58b82dd96d3a0dd.jpg" data-nis="" data-nisn="0071882980" data-tempat_lahir="Pontianak" data-tanggal_lahir="2007-12-26" data-alamat="Pontianak jln.harapan jaya gg.asia jaya jalur 1" style="font-size: 11px; padding: 1px 2px 1px 2px;"> <i class="fa fa-edit"></i> Edit Data </button>
+                        </div>
+                        <div class="col-md-6 col-6">
+                          <button type="button" class="btn btn-info btn-sm mr-1 btn-edit-pw btn-block" data-username="085845220200" style="font-size: 11px; padding: 1px 2px 1px 2px;"> <i class="fa fa-key"></i> Edit Password </button>
+                        </div>
+                      </div>
+                      
+                      <p class="text-muted text-center mb-1">
+                                                    <img class="profile-user-img img-fluid img-circle"
+                          src="https://belajar.e-smanpul.com/img/avatar_murid/MURID-0812-c272fcfaf19fa19dc58b82dd96d3a0dd.jpg"
+                          alt="User profile picture">
+                                                    <h3 class="profile-username text-center mb-0 font-16 fw-bold">RAISYA PERMATA INTANIA WULANDARI</h3>
+                          <p class="text-muted text-center mb-0 font-12">NIS : - / NISN : 0071882980</p>
+                          <p class="text-muted text-center font-12">  XI   F</p>
+                      </p>
+                      <strong><i class="fas fa-map-marker-alt mr-1 font-12"></i> Tempat, Tanggal Lahir</strong>
+                      <p class="text-muted ml-4 font-12">Pontianak, 26 Dec 2007</p>
+                      <hr>
+                      <strong><i class="far fa-file-alt mr-1 font-12"></i> Alamat Lengkap </strong>
+                      <p class="text-muted ml-4 font-12">Pontianak jln.harapan jaya gg.asia jaya jalur 1</p>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <div class="card-footer">
+
+                  </div>
+                  <!-- /.card -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-9">
+                  <div class="row mb-2">
+                    <div class="col-md-12">
+                      <a href="https://belajar.e-smanpul.com/siswa/schedule" class="btn btn-light active fw-bolder"><i class="fa fa-calendar"></i> <i> JADWAL HARI INI </i> </a>
+                      <a href="https://belajar.e-smanpul.com/siswa/all-class" class="btn btn-primary"><i class="fa fa-address-book"></i> <i> SEMUA KELAS </i> </a>
+                    </div>
+                  </div>
+                  <div class="row">
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/b8201bd2/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> MATEMATIKA</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Irena Yuli Setyanthiana Pratiwi, M.Pd </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-0808-foto-latar-merah-.jpeg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/433081f7/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> BAHASA INGGRIS</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Amin Abdi Luhur, S. Pd </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-2006-img20231228094158.jpg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/6635a13d/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> PKN</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Fita Mulyani, SH </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-0930-whatsapp-image-2021-06-07-at-09.26.49.jpeg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/2aa0a0c8/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> BAHASA JERMAN</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Hazmi, S.Pd, M.Si </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-0755-foto-3-4-hazmi.jpg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/a28fcb4f/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> SEJARAH INDONESIA</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Hervina, S.Pd </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-1936-img-20230304-wa0025.jpg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/78c4634b/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> SENI BUDAYA</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Erwan Suparlan, S.Sn </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-1344-whatsapp-image-2022-11-14-at-13.43.20.jpeg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/d03c4730/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> PJOK</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Melanus Deni L., S.Pd </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-0936-unnamed.jpg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/f3602832/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> BAHASA INDONESIA</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Bari Utami Wulandari, S.Pd </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-1456-p_20180512_182247_ll.jpg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/ba2e0c02/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> SOSIOLOGI</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Dian Pratiwi, S.Pd </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-2111-500028400570_60851.jpg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/4de5932b/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> GEOGRAFI</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Hendra, SH </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-1107-img-20191224-wa0055.jpg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/a44d1350/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> EKONOMI</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Ika Novita Sari, S.Pd </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-1008-b26d7dcc-f617-4f95-9078-fc092b868bca.jfif"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/213dff02/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> PENDIDIKAN AGAMA ISLAM</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Budiman, S.Pd.I </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-2123-whatsapp-image-2024-07-24-at-21.16.06.jpeg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                          <div class="col-md-4">
+                        <div class="card card-primary">
+                          <a href="https://belajar.e-smanpul.com/siswa/8e5cde09/forum" class="w-100">
+                            <div class="card-header position-relative img-header-kelas-2">
+                              <p class="mb-0 title-class"> PENDIDIKAN AGAMA KATOLIK</p>
+                              <p class="mb-0 title-priode">
+                                XI  F
+                              </p>
+                              <p class="mb-0 title-guru"> Paskalis, S.Ag, M.Pd </p>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body position-relative">
+                                <p class="position-absolute img-position">
+                                                                    <img class="img-class-card img-fluid img-circle"
+                                      src="https://belajar.e-smanpul.com/img/avatar_guru/GURU-0934-paskalis.jpg"
+                                      alt="User profile picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+                                                                  </p>
+                              <p style="height: 100px;"> </p>
+                            </div>
+                          </a>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-auto mr-auto">
+                                  <p class="my-0 position-absolute" style="z-index: 999">
+                                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24" class=" NMm5M"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.55 0c.14-.15.33-.25.55-.25s.41.1.55.25c.12.13.2.31.2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5zM19 5v10.79C16.52 14.37 13.23 14 12 14s-4.52.37-7 1.79V5h14zM5 19v-.77C6.74 16.66 10.32 16 12 16s5.26.66 7 2.23V19H5z"></path><path d="M12 13c1.94 0 3.5-1.56 3.5-3.5S13.94 6 12 6 8.5 7.56 8.5 9.5 10.06 13 12 13zm0-5c.83 0 1.5.67 1.5 1.5S12.83 11 12 11s-1.5-.67-1.5-1.5S11.17 8 12 8z"></path></svg>
+                                  </p>
+                              </div>
+                              <div class="col-auto ml-auto">
+                                
+                                &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                                      </div>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+
+    <!-- Modal Create -->
+    <div class="modal fade" id="profil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Edit Data </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="https://belajar.e-smanpul.com/siswa/pilih-kelas/save-profil" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="BskSr7gPws2Wk6nVYMZUT7RwS2Vu2TzbhL1A2cMB">                    <div class="modal-body">
+                        <div class="row text-center">
+                            <div class="col-lg-5 col-sm-12">
+                                <p class="mb-2">
+                                    <img src="https://belajar.e-smanpul.com/img/no-image.jpeg" alt="" id="imageku_src" width="300px" height="250px">
+                                </p>
+                                <p class="mb-2">
+                                    <span class="btn-transition btn btn-outline-info btn-file">
+                                        <i class="fa fa-folder"></i> Ganti <input type="file" name="foto" id="imageku" accept="image/*">
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="col-lg-7 col-sm-12 mb-2">
+                              <div class="row">
+                                <input type="hidden" name="id" value="1837">
+                                <input type="hidden" name="link" value="https://belajar.e-smanpul.com">
+                                <div class="col-md-12 mb-2">
+                                  <label class="text-left w-100"> Nama Lengkap </label>
+                                  <input type="text" id="unama" name="nama" class="form-control" placeholder="Nama Lengkap">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                  <label class="text-left w-100"> NIS </label>
+                                  <input type="text" id="unis" name="nis" class="form-control" placeholder="NIS">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                  <label class="text-left w-100"> NISN </label>
+                                  <input type="text" id="unisn" name="nisn" class="form-control" placeholder="NISN">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                  <label class="text-left w-100"> Tempat Lahir </label>
+                                  <input type="text" id="utempat_lahir" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                  <label class="text-left w-100"> Tanggal Lahir </label>
+                                  <input type="date" id="utanggal_lahir" name="tanggal_lahir" class="form-control">
+                                </div>
+                                <div class="col-md-12 mb-2">
+                                  <label class="text-left w-100"> Alamat </label>
+                                  <textarea rows="3" name="alamat" id="ualamat" class="form-control" placeholder="Alamat Lengkap"></textarea>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Create -->
+    <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content ">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"> Edit Password </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <form action="https://belajar.e-smanpul.com/siswa/pilih-kelas/save-account" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="_token" value="BskSr7gPws2Wk6nVYMZUT7RwS2Vu2TzbhL1A2cMB">                  <div class="modal-body">
+                      <div class="row text-center">
+                          <div class="col-lg-12 col-sm-12 mb-2">
+                            <div class="row">
+                              <input type="hidden" name="id" value="1837">
+                              <div class="col-md-12 mb-2">
+                                <label class="text-left w-100"> Username </label>
+                                <input type="text" id="uusername" name="" class="form-control" placeholder="" disabled value="">
+                              </div>
+                              <div class="col-md-12 mb-2">
+                                <label class="text-left w-100"> Password Baru (Minimal 6 Karakter) </label>
+                                <input type="text" id="upw" name="password" class="form-control" placeholder="Masukkan Password" required value="" autocomplete="off">
+                              </div>
+                              <div class="col-md-12 mb-2">
+                                <label class="text-left w-100"> Konfirmasi Password Baru </label>
+                                <input type="text" id="ukon_pw" name="konfirmasi_password" class="form-control" placeholder="Masukkan Password Baru" required value="" autocomplete="off">
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                      <button type="submit" class="btn btn-primary">Simpan</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+
+    <div class="py-5 px-3">
+      
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <nav class="navbar navbar-dark bg-light navbar-expand fixed-bottom d-md-none d-lg-none d-xl-none py-0" style="border: 1px solid #ddd; border-radius:10px 10px 0px 0px;">
+      </nav>
+  
+</div>
+  <script>
+    $('.btn-edit').on('click', function(){
+      var nama = $(this).data('nama');
+      var foto = $(this).data('foto');
+      var nis = $(this).data('nis');
+      var nisn = $(this).data('nisn');
+
+      var tempat_lahir = $(this).data('tempat_lahir');
+      var tanggal_lahir = $(this).data('tanggal_lahir');
+      var alamat = $(this).data('alamat');
+
+      var url = '';
+      if(foto == null || foto == ''){
+        url = 'https://belajar.e-smanpul.com/img/no-image.jpeg';
+      }else{
+        url = 'https://belajar.e-smanpul.com/img/avatar_murid/'+foto;
+      }
+
+      $('#unama').val(nama);
+      $('#unis').val(nis);
+      $('#unisn').val(nisn);
+      $('#utempat_lahir').val(tempat_lahir);
+      $('#utanggal_lahir').val(tanggal_lahir);
+      $('#utanggal_lahir').change();
+      $('#ualamat').val(alamat);
+      $('#imageku_src').attr('src', url);
+      $('#profil').modal('show')
+    })
+  </script>
+  <script>
+    $('.btn-edit-pw').on('click', function(){
+      var username = $(this).data('username');
+      $('#uusername').val(username);
+      $('#account').modal('show')
+    })
+  </script>
+  <script>
+    jQuery("#imageku").change(function(){
+        readURLicon(this, '#imageku_src');
+    });
+
+    function readURLicon(input, tmp) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(tmp).attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+</body>
+</html>
